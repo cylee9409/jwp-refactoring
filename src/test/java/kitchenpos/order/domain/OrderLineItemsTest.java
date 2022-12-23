@@ -1,6 +1,6 @@
 package kitchenpos.order.domain;
 
-import kitchenpos.menu.domain.Menu;
+import kitchenpos.menu.domain.Long;
 import kitchenpos.table.domain.OrderTable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -24,8 +24,8 @@ public class OrderLineItemsTest {
 
     private Order 주문;
 
-    private Menu 풀코스;
-    private Menu 오일2인세트;
+    private Long 풀코스;
+    private Long 오일2인세트;
 
     private OrderLineItem 풀코스_주문;
     private OrderLineItem 오일2인세트_주문;

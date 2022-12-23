@@ -1,6 +1,6 @@
 package kitchenpos.order.application;
 
-import kitchenpos.menu.domain.Menu;
+import kitchenpos.menu.domain.Long;
 import kitchenpos.menu.domain.MenuRepository;
 import kitchenpos.order.domain.*;
 import kitchenpos.order.dto.OrderLineItemRequest;
@@ -46,8 +46,8 @@ public class OrderServiceTest {
     @InjectMocks
     private OrderService orderService;
 
-    private Menu 풀코스;
-    private Menu 오일2인세트;
+    private Long 풀코스;
+    private Long 오일2인세트;
 
     private Order 주문1;
     private Order 주문2;

@@ -1,8 +1,6 @@
-package kitchenpos.menu.domain;
+package kitchenpos.product.domain;
 
-import kitchenpos.product.domain.MenuProduct;
-import kitchenpos.product.domain.MenuProducts;
-import kitchenpos.product.domain.Product;
+import kitchenpos.menu.domain.MenuGroup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +11,7 @@ import java.util.List;
 
 import static kitchenpos.menu.domain.MenuFixture.메뉴;
 import static kitchenpos.menu.domain.MenuGroupFixture.메뉴그룹;
-import static kitchenpos.menu.domain.MenuProductFixture.메뉴상품;
+import static kitchenpos.product.domain.MenuProductFixture.메뉴상품;
 import static kitchenpos.product.domain.ProductFixture.상품;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;

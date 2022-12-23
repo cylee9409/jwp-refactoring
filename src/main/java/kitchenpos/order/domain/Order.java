@@ -20,12 +20,8 @@ public class Order {
     private String orderStatus;
     private LocalDateTime orderedTime;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "order_table_id")
-    private OrderTable orderTable;
+    private Long orderTableId;
 
-    @Embedded
-    private OrderLineItems orderLineItems = new OrderLineItems();
 
     public Order() {
 

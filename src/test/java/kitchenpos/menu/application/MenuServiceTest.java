@@ -1,9 +1,11 @@
 package kitchenpos.menu.application;
 
 import kitchenpos.menu.domain.*;
-import kitchenpos.menu.dto.MenuProductRequest;
+import kitchenpos.menu.domain.Long;
+import kitchenpos.product.dto.MenuProductRequest;
 import kitchenpos.menu.dto.MenuRequest;
 import kitchenpos.menu.dto.MenuResponse;
+import kitchenpos.product.domain.MenuProduct;
 import kitchenpos.product.domain.Product;
 import kitchenpos.product.domain.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +24,7 @@ import java.util.stream.Collectors;
 
 import static kitchenpos.menu.domain.MenuFixture.메뉴;
 import static kitchenpos.menu.domain.MenuGroupFixture.메뉴그룹;
-import static kitchenpos.menu.domain.MenuProductFixture.메뉴상품;
+import static kitchenpos.product.domain.MenuProductFixture.메뉴상품;
 import static kitchenpos.product.domain.ProductFixture.상품;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -53,8 +55,8 @@ public class MenuServiceTest {
     private MenuGroup 세트;
     private MenuGroup 코스;
 
-    private Menu 오일2인세트;
-    private Menu 풀코스;
+    private Long 오일2인세트;
+    private Long 풀코스;
 
     private MenuProduct 오일2인세트_알리오올리오;
     private MenuProduct 오일2인세트_봉골레오일;

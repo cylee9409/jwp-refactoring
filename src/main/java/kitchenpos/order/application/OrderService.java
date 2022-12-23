@@ -1,6 +1,6 @@
 package kitchenpos.order.application;
 
-import kitchenpos.menu.domain.Menu;
+import kitchenpos.menu.domain.Long;
 import kitchenpos.menu.domain.MenuRepository;
 import kitchenpos.order.domain.*;
 import kitchenpos.order.dto.OrderLineItemRequest;
@@ -53,7 +53,7 @@ public class OrderService {
     }
 
     @Transactional
-    public OrderResponse changeOrderStatus(final Long orderId, final OrderRequest orderRequest) {
+    public OrderResponse changeOrderStatus(final java.lang.Long orderId, final OrderRequest orderRequest) {
         final Order persistOrder = findOrderById(orderId);
         persistOrder.updateOrderStatus(orderRequest.getOrderStatus());
         return OrderResponse.of(persistOrder);
@@ -63,22 +63,22 @@ public class OrderService {
         List<OrderLineItem> orderLineItemList = new ArrayList<>();
         orderLineItemRequests.stream()
                 .forEach(orderLineItemRequest -> {
-                    Menu menu = findMenuById(orderLineItemRequest.getMenuId());
+                    Long menu = findMenuById(orderLineItemRequest.getMenuId());
                     orderLineItemList.add(new OrderLineItem(order, menu, orderLineItemRequest.getQuantity()));
                 });
 
         return orderLineItemList;
     }
 
-    private Order findOrderById(Long orderId) {
+    private Order findOrderById(java.lang.Long orderId) {
         return orderRepository.findById(orderId).orElseThrow(IllegalArgumentException::new);
     }
 
-    private OrderTable findOrderTableById(Long orderTableId) {
+    private OrderTable findOrderTableById(java.lang.Long orderTableId) {
         return orderTableRepository.findById(orderTableId).orElseThrow(IllegalArgumentException::new);
     }
 
-    private Menu findMenuById(Long menuId) {
+    private Long findMenuById(java.lang.Long menuId) {
         return menuRepository.findById(menuId).orElseThrow(IllegalArgumentException::new);
     }
 }

@@ -1,5 +1,6 @@
 package kitchenpos.menu.domain;
 
+import kitchenpos.product.domain.MenuProduct;
 import kitchenpos.product.domain.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 
 import static kitchenpos.menu.domain.MenuFixture.메뉴;
 import static kitchenpos.menu.domain.MenuGroupFixture.메뉴그룹;
-import static kitchenpos.menu.domain.MenuProductFixture.메뉴상품;
+import static kitchenpos.product.domain.MenuProductFixture.메뉴상품;
 import static kitchenpos.product.domain.ProductFixture.상품;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -26,7 +27,7 @@ public class MenuTest {
 
     private MenuGroup 코스;
 
-    private Menu 풀코스;
+    private Long 풀코스;
 
     private MenuProduct 풀코스_카프레제샐러드;
     private MenuProduct 풀코스_알리오올리오;
