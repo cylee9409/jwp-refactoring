@@ -1,5 +1,7 @@
 package kitchenpos.menu.domain;
 
+import kitchenpos.product.domain.MenuProduct;
+import kitchenpos.product.domain.MenuProducts;
 import kitchenpos.product.domain.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -26,7 +28,7 @@ public class MenuProductsTest {
 
     private MenuGroup 코스;
 
-    private Menu 풀코스;
+    private Long 풀코스;
 
     private MenuProduct 풀코스_카프레제샐러드;
     private MenuProduct 풀코스_알리오올리오;

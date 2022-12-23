@@ -1,6 +1,4 @@
-package kitchenpos.menu.domain;
-
-import kitchenpos.product.domain.Product;
+package kitchenpos.product.domain;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,13 +10,12 @@ public class MenuProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "menu_id")
-    private Menu menu;
+    private Long menuId;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "product_id")
     private Product product;
+
 
     private long quantity;
 
@@ -26,8 +23,8 @@ public class MenuProduct {
 
     }
 
-    public MenuProduct(Menu menu, Product product, long quantity) {
-        this.menu = menu;
+    public MenuProduct(Long menuId, Product product, long quantity) {
+        this.menuId = menuId;
         this.product = product;
         this.quantity = quantity;
     }
@@ -40,8 +37,8 @@ public class MenuProduct {
         return seq;
     }
 
-    public Menu getMenu() {
-        return menu;
+    public Long getMenuId() {
+        return menuId;
     }
 
     public Product getProduct() {
